@@ -1,0 +1,22 @@
+# Base Python image (lightweight)
+FROM python:3.12-slim
+
+# Set work directory
+WORKDIR /app
+
+# Copy only the dbt_project folder and requirements
+COPY dbt_project /app/dbt_project
+COPY requirements.txt /app/requirements.txt
+
+# Install dependencies
+RUN pip install --no-cache-dir -r /app/requirements.txt \
+    && pip install duckdb fastapi uvicorn pandas
+
+# Set environment variable for DB path
+ENV DB_PATH=/opt/airflow/MCP_Healthcare_pipeline/data/bronze.duckdb
+
+# Expose MCP API port
+EXPOSE 8080
+
+# Default command
+CMD ["python", "dbt_project/mcp_service.py"]

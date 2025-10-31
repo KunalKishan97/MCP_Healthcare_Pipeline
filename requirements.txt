@@ -1,0 +1,6 @@
+pandas
+duckdb
+dlt[duckdb]
+fastapi
+uvicorn
+pyyaml
