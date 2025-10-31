@@ -1,0 +1,6 @@
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.3.0
+
+  - package: sdebruyn/dbt_duckdb_utils
+    version: 0.1.1

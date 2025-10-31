@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: encounter_table
+    description: "Contains encounter or appointment-level details for each patient visit."
+    columns:
+      - name: enc_id
+        description: "Unique encounter or appointment ID."
+      - name: chart_number
+        description: "Patient chart number for linking with patient_table."
+      - name: dos
+        description: "Date of service for the encounter."
+      - name: appointment_status
+        description: "Status of the appointment (e.g., Completed, Cancelled)."
+      - name: type
+        description: "Appointment or encounter type."
+      - name: ins_primary
+        description: "Primary insurance plan for the encounter."
+      - name: ins_secondary
+        description: "Secondary insurance plan if applicable."
+      - name: client
+        description: "Client or department ID associated with the encounter."

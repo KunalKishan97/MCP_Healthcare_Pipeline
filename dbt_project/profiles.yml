@@ -1,0 +1,9 @@
+healthcare_dbt_profile:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      #path: D:/Project/MCP_Healthcare_pipeline/data/bronze.duckdb
+      path: "/opt/airflow/MCP_Healthcare_pipeline/data/bronze.duckdb"
+      threads: 1
+      extensions: []

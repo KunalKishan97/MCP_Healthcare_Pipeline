@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: all_data
+    description: >
+      Consolidated fact model that merges patient demographics, encounter details,
+      diagnosis codes, and procedure (CPT) information. This serves as the unified
+      "gold" layer combining data from all major clinical sources for analytics and reporting.
+    columns:
+      - name: PatientName
+        description: >
+          SHA256-hashed patient name for anonymization and privacy compliance.
+      - name: dob
+        description: >
+          Date of birth of the patient.
+      - name: full_address
+        description: >
+          Full address of the patient (concatenated address fields).
+      - name: dos
+        description: >
+          Date of service or appointment.
+      - name: appointment_status
+        description: >
+          Indicates the appointment outcome (e.g., Completed, Cancelled, No-show).
+      - name: enc_id
+        description: >
+          Unique identifier for each encounter or appointment.
+      - name: chart_number
+        description: >
+          Enterprise-wide patient or chart identifier linking all records.
+      - name: icd10_1
+        description: Primary diagnosis code (ICD-10).
+      - name: icd10_2
+        description: Secondary diagnosis code (ICD-10).
+      - name: icd10_3
+        description: Diagnosis code 3 (ICD-10).
+      - name: icd10_4
+        description: Diagnosis code 4 (ICD-10).
+      - name: icd10_5
+        description: Diagnosis code 5 (ICD-10).
+      - name: icd10_6
+        description: Diagnosis code 6 (ICD-10).
+      - name: icd10_7
+        description: Diagnosis code 7 (ICD-10).
+      - name: icd10_8
+        description: Diagnosis code 8 (ICD-10).
+      - name: icd10_9
+        description: Diagnosis code 9 (ICD-10).
+      - name: icd10_10
+        description: Diagnosis code 10 (ICD-10).
+      - name: icd10_11
+        description: Diagnosis code 11 (ICD-10).
+      - name: icd10_12
+        description: Diagnosis code 12 (ICD-10).
+      - name: cpt
+        description: >
+          Procedure code (CPT) linked to the encounter.
+      - name: cpt_desc
+        description: >
+          Human-readable description of the CPT code.
+      - name: client
+        description: >
+          Department, client, or organization the record belongs to.
+    meta:
+      mcp:
+        layer: gold
+        lineage: 
+          depends_on:
+            - ref('patient_table')
+            - ref('encounter_table')
+            - ref('dx_table')
+            - ref('cpt_table')
+        pii: true
+        last_modified_by: dbt

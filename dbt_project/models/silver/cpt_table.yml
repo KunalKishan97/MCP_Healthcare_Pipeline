@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: cpt_table
+    description: "Holds procedure-level (CPT) details for encounters."
+    columns:
+      - name: enc_id
+        description: "Foreign key linking to encounter_table."
+      - name: chart_number
+        description: "Patient chart number."
+      - name: dos
+        description: "Date of service for which the CPT applies."
+      - name: cpt
+        description: "CPT (Current Procedural Terminology) code."
+      - name: cpt_desc
+        description: "Description of the procedure code."

@@ -1,0 +1,11 @@
+context_store:
+  type: duckdb
+  #path: D:/Project/MCP_Healthcare_pipeline/data/bronze.duckdb
+  path: "/opt/airflow/MCP_Healthcare_pipeline/data/bronze.duckdb"
+
+
+dbt_integration:
+  manifest_path: "/opt/airflow/MCP_Healthcare_pipeline/dbt_project/target/manifest.json"
+  catalog_path:  "/opt/airflow/MCP_Healthcare_pipeline/dbt_project/target/catalog.json"
+
+

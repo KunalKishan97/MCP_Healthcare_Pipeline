@@ -1,0 +1,13 @@
+name: healthcare_dbt
+version: '1.0'
+config-version: 2
+
+# Only define model-paths
+model-paths: ["models"]
+
+profile: healthcare_dbt_profile
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"

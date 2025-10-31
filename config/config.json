@@ -1,0 +1,48 @@
+{
+  "src": "PRISM",
+  "extract": {
+    "source_type": "csv",
+    "path": "data/Patient_data_File.csv",
+    "format": "csv",
+    "options": {
+      "skiprows": 1
+    }
+  },
+  "load_data": {
+    "tables": [
+      {
+        "table_name": "cpt_table",
+        "skip_select_column": false,
+        "select_columns": [
+          "load_id", "load_dtm", "src", "enc_id", "chart_number", "dos", "cpt", "cpt_desc"
+        ]
+      },
+      {
+        "table_name": "encounter_table",
+        "skip_select_column": false,
+        "select_columns": [
+          "load_id", "load_dtm", "src", "enc_id", "chart_number", "dos", "appointment_status", "type",
+           "ins_primary","ins_secondary", "client"
+        ]
+      },
+      {
+        "table_name": "dx_table",
+        "skip_select_column": false,
+        "select_columns": [
+          "load_id", "load_dtm", "src", "enc_id", "chart_number", "dos", "icd10_1", "icd10_2",
+          "icd10_3", "icd10_4", "icd10_5", "icd10_6", "icd10_7", "icd10_8", "icd10_9",
+          "icd10_10", "icd10_11", "icd10_12"
+        ]
+      },
+      {
+        "table_name": "patient_table",
+        "skip_select_column": false,
+        "select_columns": [
+          "load_id", "load_dtm", "src", "chart_number", "name_first", "name_last", "dob",
+          "city", "state", "zipcode", "mobile_no", "address_1", "address_2",
+          "sex", "race", "ethnicity", "language", "dos_first", "client"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: prism_source
+    database: '/opt/airflow/Healthcare_pipeline_New/data/bronze.duckdb'   # DuckDB file: bronze.duckdb
+    schema: 'main'       # schema inside DuckDB, usually 'main'
+    tables:
+      - name: raw_data

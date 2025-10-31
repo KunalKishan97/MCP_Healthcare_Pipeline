@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: bronze_table_data
+    description: >
+      This is the base bronze model that captures all ingested raw data from the source systems.
+      It serves as the initial landing layer in the data pipeline before any transformations are applied.
+    columns:
+      - name: chart_number
+        description: Unique chart identifier for each patient encounter.
+      - name: patientname
+        description: Name of the patient as captured from source data.
+      - name: dob
+        description: Patient date of birth.
+      - name: full_address
+        description: Full residential address of the patient.
+      - name: dos
+        description: Date of service or appointment.
+      - name: appointment_status
+        description: Current status of the appointment (e.g., Completed, Cancelled, Scheduled).
+      - name: icd10_1
+        description: Primary diagnosis code.
+      - name: icd10_2
+        description: Secondary diagnosis code if available.
+      - name: cpt
+        description: CPT code associated with the procedure.
+      - name: cpt_desc
+        description: Description of the CPT code.
+      - name: client
+        description: Client or facility identifier associated with the data record.

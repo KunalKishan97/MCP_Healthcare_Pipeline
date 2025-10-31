@@ -1,0 +1,20 @@
+select
+    load_id,
+    load_dtm,
+    src,
+    enc_id,
+    chart_number,
+    dos,
+    icd10_1,
+    icd10_2,
+    icd10_3,
+    icd10_4,
+    icd10_5,
+    icd10_6,
+    icd10_7,
+    icd10_8,
+    icd10_9,
+    icd10_10,
+    icd10_11,
+    icd10_12
+from {{ deduplicate(ref('bronze_table_data'), 'chart_number') }}

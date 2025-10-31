@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: patient_table
+    description: "Stores patient-level demographics and related metadata from the PRISM source."
+    columns:
+      - name: chart_number
+        description: "Enterprise ID or unique chart number identifying a patient."
+      - name: name_first
+        description: "Patient's first name."
+      - name: name_last
+        description: "Patient's last name."
+      - name: dob
+        description: "Date of birth of the patient."
+      - name: address_1
+        description: "Primary address line."
+      - name: address_2
+        description: "Secondary address line, if available."
+      - name: city
+        description: "Patient city."
+      - name: state
+        description: "State of residence."
+      - name: zipcode
+        description: "ZIP or postal code."
+      - name: mobile_no
+        description: "Patient's contact number."
+      - name: sex
+        description: "Patient gender/sex as recorded."
+      - name: race
+        description: "Race category of the patient."
+      - name: ethnicity
+        description: "Ethnicity of the patient."
+      - name: language
+        description: "Preferred language for communication."
+      - name: dos_first
+        description: "First date of service or initial appointment date."
+      - name: client
+        description: "Department or client identifier for service tracking."

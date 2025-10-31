@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dx_table
+    description: "Contains patient diagnosis codes (ICD-10) for each encounter."
+    columns:
+      - name: enc_id
+        description: "Unique encounter ID, linking to encounter_table."
+      - name: chart_number
+        description: "Unique patient chart number linking to patient_table."
+      - name: dos
+        description: "Date of service when the diagnosis was recorded."
+      - name: icd10_1
+        description: "Primary diagnosis code (ICD-10)."
+      - name: icd10_2
+        description: "Secondary diagnosis code (ICD-10)."
+      - name: icd10_3
+        description: "Tertiary diagnosis code (ICD-10)."
+      - name: icd10_4
+        description: "Fourth diagnosis code (ICD-10)."
+      - name: icd10_5
+        description: "Fifth diagnosis code (ICD-10)."
+      - name: icd10_6
+        description: "Sixth diagnosis code (ICD-10)."
+      - name: icd10_7
+        description: "Seventh diagnosis code (ICD-10)."
+      - name: icd10_8
+        description: "Eighth diagnosis code (ICD-10)."
+      - name: icd10_9
+        description: "Ninth diagnosis code (ICD-10)."
+      - name: icd10_10
+        description: "Tenth diagnosis code (ICD-10)."
+      - name: icd10_11
+        description: "Eleventh diagnosis code (ICD-10)."
+      - name: icd10_12
+        description: "Twelfth diagnosis code (ICD-10)."
+      - name: load_id
+        description: "Unique load batch ID for lineage tracking."
+      - name: load_dtm
+        description: "Timestamp when this record was ingested."
+      - name: src
+        description: "Source system identifier (e.g., PRISM)."

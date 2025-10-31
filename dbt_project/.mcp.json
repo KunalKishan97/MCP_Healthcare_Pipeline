@@ -1,0 +1,8 @@
+{
+  "providers": {
+    "dbt": {
+      "type": "mcp-http",
+      "url": "http://localhost:8090/context"
+    }
+  }
+}
